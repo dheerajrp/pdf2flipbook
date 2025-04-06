@@ -209,6 +209,13 @@ def generate_html(image_paths, output_html):
     with open(output_html, "w") as f:
         f.write(html_content)
 
+def convert_pdf_to_flipbook(pdf_path, output_html="flipbook.html"):
+    """Wrapper to convert PDF to HTML flipbook (for programmatic use)."""
+    images = convert_pdf_to_base64_images(pdf_path)
+    generate_html(images, output_html)
+    return
+
+
 
 def main():
     import argparse
@@ -218,8 +225,7 @@ def main():
     parser.add_argument("--output", default="flipbook.html", help="Output HTML filename")
     args = parser.parse_args()
 
-    images = convert_pdf_to_base64_images(args.pdf_path)
-    generate_html(images, args.output)
+    convert_pdf_to_flipbook(args.pdf_path, args.output)
     print(f"Flipbook generated! Open {args.output} in your browser.")
 
 

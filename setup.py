@@ -2,8 +2,9 @@ from setuptools import setup
 
 setup(
     name="pdf2flipbook",
-    version="0.1.1",
+    version="0.1.2",
     py_modules=["flipbook_generator"],
+    packages=["pdf2flipbook"],
     install_requires=[
         "pdf2image",
         "jinja2",
