@@ -15,7 +15,7 @@ pip install pdf2flipbook
 pdf2flipbook path/to/file.pdf --output mybook.html
 ```
 
-### Programatically
+### Programmatically
 
 ```bash
 from pdf2flipbook import convert_pdf_to_flipbook
